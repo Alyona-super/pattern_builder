@@ -3,6 +3,7 @@ package org.example;
 import java.util.ArrayList;
 import java.util.List;
 
+// Класс автобусов, для создания объекта типа: автобус и добавления в него всех необходимых параметров
 public class Bus extends Vechicle{
 
     protected List<Passenger> passengers = new ArrayList<Passenger>();
@@ -11,14 +12,9 @@ public class Bus extends Vechicle{
     protected String dop_info = null;
 
     public Bus(){
-
+        System.out.println("Создан автобус!");
     }
-//    public Bus(List<Passenger> pas, Driver dr, double pr, String dop){
-//        this.passengers=pas;
-//        this.driver=dr;
-//        this.price=pr;
-//        this.dop_info=dop;
-//    }
+
 
     public void setPassengers(List<Passenger> passengers) {
         this.passengers = passengers;
@@ -53,4 +49,14 @@ public class Bus extends Vechicle{
         }
         return info;
     }
+
+    public void Check_ready(){
+//        Проверка готовности
+        if ((this.getDriver()!=null) && (this.getPassengers().size()>0)){
+            System.out.println("Транспорт готов к отъезду!");
+        }
+        else {
+            System.out.println("Транспорт не готов!");
+        }
+    };
 }

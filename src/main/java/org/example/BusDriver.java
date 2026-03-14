@@ -1,8 +1,9 @@
 package org.example;
 
+//Реализация водителя автобуса
 public class BusDriver extends Driver{
     private static BusDriver instanse;
-//    private String status;
+
     private BusDriver(){
         super();
     };

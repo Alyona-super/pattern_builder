@@ -3,7 +3,10 @@ package org.example;
 import java.util.ArrayList;
 import java.util.List;
 
+//Класс-родитель для всех видов транспорта
 public class Vechicle {
+
+
 //    private List<Passenger> passengers = new ArrayList<Passenger>();
 //    private Driver driver;
 //    private double price;

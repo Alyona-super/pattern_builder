@@ -1,9 +1,8 @@
 package org.example;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
 
+import java.util.Scanner;
+//Класс-строитель для такси
 public class Builder_taxi implements Builder_vechicle{
     Taxi taxi;
     final int amount_seats = 4;
@@ -14,18 +13,6 @@ public class Builder_taxi implements Builder_vechicle{
         return taxi;
     }
 
-    //    public Builder_vechicle BoardPassenger(Passenger cur_pas){
-//        if (passengers.size()<amount_seats){
-//            if (cur_pas.getStatus()=="Child"){
-//                this.dop_info+="Необходимо детское кресло";
-//            }
-//            passengers.add(cur_pas);
-//        }
-//        else{
-//            System.out.println("В этом такси все места заняты");
-//        }
-//        return this;
-//    };
     public  void BoardPassengers(Passenger ... pass){
         if (amount_seats - taxi.passengers.size()>=pass.length){
             for (int i = 0; i < pass.length; i++) {
@@ -70,16 +57,5 @@ public class Builder_taxi implements Builder_vechicle{
         taxi = new Taxi();
         return taxi;
     }
-//    public Vechicle Build(){
-//        Vechicle new_Vechicle = new Vechicle(passengers, cur_driver, price, dop_info);
-////        Проверка готовности
-//        if ((new_Vechicle.getDriver()!=null) && (new_Vechicle.getPassengers().size()>0)){
-//            System.out.println("Транспорт готов к отъезду!");
-//            return  new_Vechicle;
-//        }
-//        else {
-//            System.out.println("Транспорт не готов!");
-//            return null;
-//        }
-//    };
+
 }

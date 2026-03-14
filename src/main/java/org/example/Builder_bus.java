@@ -5,7 +5,7 @@ import java.util.List;
 
 import static java.lang.Math.round;
 
-
+//Класс-строитель для автобусов
 public class Builder_bus implements Builder_vechicle{
     Bus bus;
     final double base_price = 74;
@@ -59,16 +59,5 @@ public class Builder_bus implements Builder_vechicle{
         bus = new Bus();
         return bus;
     };
-//    public Vechicle Build(){
-//        Vechicle new_Vechicle = new Vechicle(passengers, cur_driver, price, dop_info);
-////        Проверка готовности
-//        if ((new_Vechicle.getDriver()!=null) && (new_Vechicle.getPassengers().size()>0)){
-//            System.out.println("Транспорт готов к отъезду!");
-//            return  new_Vechicle;
-//        }
-//        else {
-//            System.out.println("Транспорт не готов!");
-//            return null;
-//        }
-//    };
+
 }
