@@ -3,6 +3,7 @@ package org.example;
 abstract class Driver {
     private String name_driver;
     public String status;
+
     Driver(){
         name_driver="Владимир";
     };

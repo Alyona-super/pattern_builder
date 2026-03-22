@@ -13,11 +13,12 @@ public class Director {
     }
 
     public Vechicle manufactureTaxiWithFamily() {
-        Driver driver = TaxiDriver.getInstanse();
+        Taxi cur_taxi = new Taxi();
+        Driver driver = new TaxiDriver();
         Passenger pas1 =new Passenger("Мама", "Adult");
         Passenger pas2 =new Passenger("Папа", "Adult");
         Passenger pas3 =new Passenger("Ребёнок", "Child");
-        Taxi cur_taxi = (Taxi) builder.Build();
+        builder.set_Vechicle(cur_taxi);
         builder.BoardDriver(driver);
         builder.BoardPassengers(pas1, pas2, pas3);
         builder.Set_price();
@@ -25,11 +26,12 @@ public class Director {
         return builder.get_Vechicle();
     }
     public Vechicle manufactureBus3passengers() {
-        Driver driver = BusDriver.getInstanse();
+        Bus cur_bus = new Bus();
+        Driver driver = new BusDriver();
         Passenger pas1 =new Passenger("Мама", "Adult");
         Passenger pas2 =new Passenger("Папа", "Discount");
         Passenger pas3 =new Passenger("Ребёнок", "Child");
-        Bus cur_bus = (Bus) builder.Build();
+        builder.set_Vechicle(cur_bus);
         builder.BoardDriver(driver);
         builder.BoardPassengers(pas1, pas2, pas3);
         builder.Set_price();

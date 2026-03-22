@@ -1,8 +1,5 @@
 package org.example;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import static java.lang.Math.round;
 
 //Класс-строитель для автобусов
@@ -13,6 +10,10 @@ public class Builder_bus implements Builder_vechicle{
 
     public Bus get_Vechicle() {
         return bus;
+    }
+
+    public void set_Vechicle(Vechicle bus) {
+        this.bus = (Bus) bus;
     }
 
     public void BoardPassengers(Passenger ... pass){
@@ -54,10 +55,6 @@ public class Builder_bus implements Builder_vechicle{
             }
         }
         System.out.println("В автобусе пока нет пассажиров");
-    };
-    public Bus Build() {
-        bus = new Bus();
-        return bus;
     };
 
 }

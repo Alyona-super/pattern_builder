@@ -4,16 +4,9 @@ package org.example;
 public class BusDriver extends Driver{
     private static BusDriver instanse;
 
-    private BusDriver(){
+    public BusDriver(){
         super();
+        super.status="Bus";
     };
 
-    public static BusDriver getInstanse() {
-        if (instanse==null){
-            instanse= new BusDriver();
-            instanse.status = "Bus";
-
-        }
-        return instanse;
-    }
 }

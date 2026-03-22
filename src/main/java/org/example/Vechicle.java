@@ -6,7 +6,8 @@ import java.util.List;
 //Класс-родитель для всех видов транспорта
 public class Vechicle {
 
-
+    public void BoardPassengers(Passenger ... pass){};
+    public void BoardDriver(Driver new_driver){};
 //    private List<Passenger> passengers = new ArrayList<Passenger>();
 //    private Driver driver;
 //    private double price;

@@ -5,16 +5,10 @@ public class TaxiDriver extends Driver{
     private static TaxiDriver instanse;
 
 
-    private TaxiDriver(){
+    public TaxiDriver(){
         super();
+        super.status= "Taxi";
     };
 
-    public static TaxiDriver getInstanse() {
-        if (instanse==null){
-            instanse= new TaxiDriver();
-            instanse.status = "Taxi";
 
-        }
-        return instanse;
-    }
 }

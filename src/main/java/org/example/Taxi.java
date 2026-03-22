@@ -9,6 +9,7 @@ public class Taxi extends Vechicle{
     protected Driver driver = null;
     protected double price = 0;
     protected String dop_info = null;
+    protected boolean child_seat = false;
 
     public Taxi(){
         System.out.println("Создано такси!");

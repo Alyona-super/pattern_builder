@@ -13,10 +13,15 @@ public class Builder_taxi implements Builder_vechicle{
         return taxi;
     }
 
+    public void set_Vechicle(Vechicle taxi) {
+        this.taxi = (Taxi) taxi;
+    }
+
     public  void BoardPassengers(Passenger ... pass){
         if (amount_seats - taxi.passengers.size()>=pass.length){
             for (int i = 0; i < pass.length; i++) {
                     if (pass[i].getStatus() == "Child") {
+                        taxi.child_seat = true;
                         taxi.dop_info = "Необходимо детское кресло";
                     }
                     taxi.passengers.add(pass[i]);
@@ -53,9 +58,5 @@ public class Builder_taxi implements Builder_vechicle{
         taxi.price = cur_price;
         }
     };
-    public Taxi Build(){
-        taxi = new Taxi();
-        return taxi;
-    }
 
 }
