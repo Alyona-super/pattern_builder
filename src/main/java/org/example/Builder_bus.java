@@ -1,5 +1,7 @@
 package org.example;
 
+import java.util.List;
+
 import static java.lang.Math.round;
 
 //Класс-строитель для автобусов
@@ -8,16 +10,16 @@ public class Builder_bus implements Builder_vechicle{
     final double base_price = 74;
     final int amount_seats = 30;
 
+    public Builder_bus(){
+        this.bus = new Bus();
+    }
     public Bus get_Vechicle() {
         return bus;
     }
 
-    public void set_Vechicle(Vechicle bus) {
-        this.bus = (Bus) bus;
-    }
 
     public void BoardPassengers(Passenger ... pass){
-        if (amount_seats - bus.passengers.size()>=pass.length){
+        if (amount_seats - bus.getPassengers().size()>=pass.length){
             for (int i = 0; i < pass.length; i++) {
                 switch (pass[i].getStatus()){
                     case "Child": pass[i].setPrice(round(base_price/2 *100)/100.00); break;
@@ -28,18 +30,20 @@ public class Builder_bus implements Builder_vechicle{
                         pass[i].setPrice(base_price);
                         break;}
                 }
-                bus.passengers.add(pass[i]);
+                List<Passenger> currentPassengers = bus.getPassengers();
+                currentPassengers.add(pass[i]);
+                bus.setPassengers(currentPassengers);
             }
         }
         else {
             System.out.println("В этом автобусе недостаточно мест для всех этих пассажиров");
-            System.out.println("Свободных мест: " + (amount_seats-bus.passengers.size()));
+            System.out.println("Свободных мест: " + (amount_seats-bus.getPassengers().size()));
         }
     };
     public void BoardDriver(Driver new_driver){
         if (new_driver.getStatus() == "Bus") {
-            if (bus.driver == null) {
-                bus.driver = new_driver;
+            if (bus.getDriver() == null) {
+                bus.setDriver(new_driver);
             } else {
                 System.out.println("В этом автобусе уже есть водитель, второго не будет!");
             }
@@ -49,9 +53,9 @@ public class Builder_bus implements Builder_vechicle{
     };
 
     public void Set_price(){
-        if (bus.passengers.size()>0) {
-            for (int i = 0; i < bus.passengers.size(); i++) {
-                bus.price += (bus.passengers.get(i).getPrice());
+        if (bus.getPassengers().size()>0) {
+            for (int i = 0; i < bus.getPassengers().size(); i++) {
+                bus.price += (bus.getPassengers().get(i).getPrice());
             }
         }
         System.out.println("В автобусе пока нет пассажиров");

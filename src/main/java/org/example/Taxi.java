@@ -5,8 +5,8 @@ import java.util.List;
 
 //Класс такси, для создания объекта типа: такси и добавления в него всех необходимых параметров
 public class Taxi extends Vechicle{
-    protected List<Passenger> passengers = new ArrayList<Passenger>();
-    protected Driver driver = null;
+    private List<Passenger> passengers = new ArrayList<Passenger>();
+    private Driver driver = null;
     protected double price = 0;
     protected String dop_info = null;
     protected boolean child_seat = false;
@@ -25,6 +25,9 @@ public class Taxi extends Vechicle{
 
     public Driver getDriver() {
         return driver;
+    }
+    public void setDriver(Driver dr){
+        this.driver=dr;
     }
 
     public double getPrice() {

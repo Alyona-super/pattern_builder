@@ -6,8 +6,8 @@ import java.util.List;
 // Класс автобусов, для создания объекта типа: автобус и добавления в него всех необходимых параметров
 public class Bus extends Vechicle{
 
-    protected List<Passenger> passengers = new ArrayList<Passenger>();
-    protected Driver driver = null;
+    private List<Passenger> passengers = new ArrayList<Passenger>();
+    private Driver driver = null;
     protected double price = 0;
     protected String dop_info = null;
 
@@ -26,6 +26,9 @@ public class Bus extends Vechicle{
 
     public Driver getDriver() {
         return driver;
+    }
+    public void setDriver(Driver dr){
+        this.driver=dr;
     }
 
     public double getPrice() {
