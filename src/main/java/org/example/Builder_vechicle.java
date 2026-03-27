@@ -1,10 +1,10 @@
 package org.example;
 
 public interface Builder_vechicle {
-    public Vechicle get_Vechicle();
-//    public Builder_vechicle BoardPassenger(Passenger cur_pas);
-    public void BoardPassengers(Passenger ... pass);
-    public void BoardDriver(Driver new_driver);
-    public void Set_price();
+    Vechicle get_Vechicle();
+//    Builder_vechicle BoardPassenger(Passenger cur_pas);
+    void BoardPassengers(Passenger ... pass);
+    void BoardDriver(Driver new_driver);
+    void Set_price();
 
 }

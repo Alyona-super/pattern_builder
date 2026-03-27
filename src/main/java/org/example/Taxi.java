@@ -59,5 +59,5 @@ public class Taxi extends Vechicle{
         else {
             System.out.println("Транспорт не готов!");
         }
-    };
+    }
 }

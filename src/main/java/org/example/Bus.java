@@ -61,5 +61,5 @@ public class Bus extends Vechicle{
         else {
             System.out.println("Транспорт не готов!");
         }
-    };
+    }
 }

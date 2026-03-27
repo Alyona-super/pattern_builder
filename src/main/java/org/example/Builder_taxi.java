@@ -35,9 +35,9 @@ public class Builder_taxi implements Builder_vechicle{
                 System.out.println("В этом такси недостаточно мест для всех этих пассажиров");
                 System.out.println("Свободных мест: " + (amount_seats-taxi.getPassengers().size()));
         }
-    };
+    }
     public void BoardDriver(Driver new_driver){
-        if (new_driver.getStatus() == "Taxi") {
+        if (new_driver.getStatus().equals("Taxi")) {
             if (taxi.getDriver() == null) {
                 taxi.setDriver(new_driver);
             } else {
@@ -46,7 +46,7 @@ public class Builder_taxi implements Builder_vechicle{
         } else {
             System.out.println("Категория водителя: " + new_driver.getStatus() + " не соответствует транспортному средству: Taxi");
         }
-    };
+    }
     public void Set_price(){
         try {
             System.out.println("Введите стоимость такси: ");
@@ -61,6 +61,6 @@ public class Builder_taxi implements Builder_vechicle{
         else{
         taxi.price = cur_price;
         }
-    };
+    }
 
 }

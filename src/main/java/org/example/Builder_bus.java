@@ -39,9 +39,9 @@ public class Builder_bus implements Builder_vechicle{
             System.out.println("В этом автобусе недостаточно мест для всех этих пассажиров");
             System.out.println("Свободных мест: " + (amount_seats-bus.getPassengers().size()));
         }
-    };
+    }
     public void BoardDriver(Driver new_driver){
-        if (new_driver.getStatus() == "Bus") {
+        if (new_driver.getStatus().equals("Bus")) {
             if (bus.getDriver() == null) {
                 bus.setDriver(new_driver);
             } else {
@@ -50,7 +50,7 @@ public class Builder_bus implements Builder_vechicle{
         } else {
             System.out.println("Категория водителя: " + new_driver.getStatus() + " не соответствует транспортному средству: Bus");
         }
-    };
+    }
 
     public void Set_price(){
         if (bus.getPassengers().size()>0) {
@@ -59,6 +59,6 @@ public class Builder_bus implements Builder_vechicle{
             }
         }
         System.out.println("В автобусе пока нет пассажиров");
-    };
+    }
 
 }
